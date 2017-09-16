@@ -7,31 +7,31 @@ int main()
 {
 
 
-    char str[20];
+    char thickness[20];
 
-    cout << "Введите толщину (1 - дохляк, 2 - качок, 3 - полный)" << endl;
-    cin >> str;
+    cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГІГ®Г«Г№ГЁГ­Гі (1 - Г¤Г®ГµГ«ГїГЄ, 2 - ГЄГ Г·Г®ГЄ, 3 - ГЇГ®Г«Г­Г»Г©)" << endl;
+    cin >> thickness;
 
     txCreateWindow ( 300 , 500 );
     HDC kartinka;
 
-     if (strcmp(str, "1") == 0)
+     if (strcmp(thickness, "1") == 0)
      {
-    kartinka = txLoadImage ("E:\\домашняяработа\\фоторобот\\тощий.bmp");
+    kartinka = txLoadImage ("ГІГ®Г№ГЁГ©.bmp");
      txBitBlt (txDC(), 40, 0, txGetExtentX (), txGetExtentY (), kartinka , 0, 0);
 
      }
 
-    if (strcmp(str, "2") == 0)
+    if (strcmp(thickness, "2") == 0)
          {
-         kartinka = txLoadImage ("E:\\домашняяработа\\фоторобот\\качок.bmp");
+         kartinka = txLoadImage ("ГЄГ Г·Г®ГЄ.bmp");
 
          txBitBlt (txDC(), 40, 0, txGetExtentX (), txGetExtentY (), kartinka , 0, 0);
 
          }
-     if (strcmp(str, "3") == 0)
+     if (strcmp(thickness, "3") == 0)
      {
-     kartinka = txLoadImage ("E:\\домашняяработа\\фоторобот\\полный.bmp");
+     kartinka = txLoadImage ("ГЇГ®Г«Г­Г»Г©.bmp");
 
      txBitBlt (txDC(), 40, 0, txGetExtentX (), txGetExtentY (), kartinka , 0, 0);
 
