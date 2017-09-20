@@ -3,43 +3,122 @@
 
 using namespace std;
 
+void drawFaceKachok();
+void drawFaceDohlyak();
+void drawFacePolniy();
+
 int main()
-{
+    {
+    char thicknessBody[2];
+    char thicknessFace[2];
 
+    cout << "Choose Human  (1 - Dohlyak, 2 - Kachok, 3 - Polniy)" << endl;
+    cin >> thicknessBody;
+    cout << "Choose Face  (1 - Dohlyak, 2 - Kachok, 3 - Polniy)" << endl;
+    cin >> thicknessFace;
 
-    char thickness[20];
-
-    cout << "Ââåäèòå òîëùèíó (1 - äîõëÿê, 2 - êà÷îê, 3 - ïîëíûé)" << endl;
-    cin >> thickness;
-
-    txCreateWindow ( 300 , 500 );
+    txCreateWindow (1000 , 600);
     HDC kartinka;
 
-     if (strcmp(thickness, "1") == 0)
-     {
-    kartinka = txLoadImage ("òîùèé.bmp");
-     txBitBlt (txDC(), 40, 0, txGetExtentX (), txGetExtentY (), kartinka , 0, 0);
+    if (strcmp (thicknessBody, "1") == 0)
+        {
+        kartinka = txLoadImage ("Dohlyak.bmp");
+        txBitBlt (txDC(), 40, 0, txGetExtentX (), txGetExtentY (), kartinka , 0, 0);
 
-     }
+           if (strcmp (thicknessFace, "1") == 0)
+            {
+            drawFaceDohlyak();
+            }
+            if (strcmp (thicknessFace, "2") == 0)
+            {
+             drawFaceKachok();
+            }
+            if (strcmp (thicknessFace, "3") == 0)
+            {
+             drawFacePolniy();
+            }
 
-    if (strcmp(thickness, "2") == 0)
-         {
-         kartinka = txLoadImage ("êà÷îê.bmp");
+        }
 
-         txBitBlt (txDC(), 40, 0, txGetExtentX (), txGetExtentY (), kartinka , 0, 0);
+    if (strcmp (thicknessBody, "2") == 0)
+        {
+        kartinka = txLoadImage ("Kachok.bmp");
 
-         }
-     if (strcmp(thickness, "3") == 0)
-     {
-     kartinka = txLoadImage ("ïîëíûé.bmp");
+        txBitBlt (txDC(), 40, 0, txGetExtentX (), txGetExtentY (), kartinka , 0, 0);
 
-     txBitBlt (txDC(), 40, 0, txGetExtentX (), txGetExtentY (), kartinka , 0, 0);
 
-     }
+           if (strcmp (thicknessFace, "1") == 0)
+            {
+            drawFaceDohlyak();
+            }
+            if (strcmp (thicknessFace, "2") == 0)
+            {
+             drawFaceKachok();
+            }
+            if (strcmp (thicknessFace, "3") == 0)
+            {
+             drawFacePolniy();
+            }
+
+        }
+
+    if (strcmp (thicknessBody, "3") == 0)
+        {
+        kartinka = txLoadImage ("Polniy.bmp");
+
+        txBitBlt (txDC(), 40, 0, txGetExtentX (), txGetExtentY (), kartinka , 0, 0);
+
+
+           if (strcmp (thicknessFace, "1") == 0)
+            {
+            drawFaceDohlyak();
+            }
+            if (strcmp (thicknessFace, "2") == 0)
+            {
+             drawFaceKachok();
+            }
+            if (strcmp (thicknessFace, "3") == 0)
+            {
+             drawFacePolniy();
+            }
+
+
+        }
+
+
+
+
+
+
+
+
+
+
 
     //cout << "str=" << str;
-     txDeleteDC ( kartinka);
+    txDeleteDC (kartinka);
 
     return 0;
 
+    }
+
+void drawFacePolniy()
+{
+txCircle(350,500,100);
+txCircle(350,500,110);
+txCircle(350,500,120);
+
+
 }
+void drawFaceDohlyak()
+{
+txCircle(350,500,50);
+
+
+}
+
+void drawFaceKachok()
+{
+txRectangle(330,100,400,200);
+}
+
